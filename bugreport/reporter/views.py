@@ -26,8 +26,7 @@ def createBug(request):
 def updateBug(request):
     if request.method == 'POST':
         form=BugUpdateForm(requeset.POST)
-        if form.is_valid():
-
+        #if form.is_valid():
     else:
         form=BugUpdateForm()
         context={"form":form}

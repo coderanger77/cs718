@@ -2,9 +2,11 @@ re archi proj.. set the base line --> 1 hour
     create 3 apps[reporter,admin,resolver]
     models:
     bug-->title,description,files,reporter,tags,bugid
-    #couldn't add tags and files. do this once the basic is done.
     reporter->username,paswd,
     bug_reporter->bugid,reporter,resolver,starttime,endtime[if status resolved]
+    #couldn't add tags and files. do this once the basic is done.
+
+
     resolver->name,paswd,role,tags
     reporter:
     report a bug
