@@ -5,7 +5,7 @@ from django.db import models
 from django.utils import timezone
 import uuid
 # Create your models here.
-
+#hi
 class Bug(models.Model):
     #bug-->title,description,files,tags,bugid
     #files not taken care  as of now. will include once basic is done.
