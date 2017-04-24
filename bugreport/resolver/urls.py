@@ -20,5 +20,5 @@ from .views import hello_view,solveBug,assignBug
 urlpatterns = [
     url(r'^$', hello_view),
     url(r'^solveBug$',solveBug),
-    url(r'^assignBug$',assignBug),
+    url(r'^assignBug$',assignBug,name='assignBug'),
 ]

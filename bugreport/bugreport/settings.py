@@ -127,5 +127,4 @@ STATICFILES_DIRS = [
 
 STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static_cdn")
 
-
 LOGIN_REDIRECT_URL = 'home'

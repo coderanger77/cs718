@@ -5,7 +5,7 @@ from django.shortcuts import render,reverse
 from django.http import HttpResponse,HttpResponseRedirect
 from .forms import BugCreateForm,BugUpdateForm
 from .models import Bug
-
+from resolver import views as resolverViews
 # Create your views here.
 
 
@@ -52,3 +52,12 @@ def viewBugs(request):
     allBugs=Bug.objects.all()
     context['bugs']=allBugs
     return render(request,'showBugs.html',context)
+
+def login_success(request):
+    """
+    Redirects users based on whether they are in the admins group
+    """
+    if request.user.groups.filter(name="reporter").exists():
+        return HttpResponseRedirect(reverse('viewbugs'))
+    else:
+        return HttpResponseRedirect(reverse('assignBug'))
