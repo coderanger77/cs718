@@ -10,7 +10,7 @@ from .models import Bug
 
 
 def hello_view(request):
-    return render(request, 'a.html', {})
+    return render(request, 'index.html', {})
     #return HttpResponse("<h1>hi</h1>")
 def createBug(request):
     # If this is a POST request then process the Form data

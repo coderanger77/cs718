@@ -121,6 +121,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
+    '/home/kireet/Desktop/cs718/project/bugreport/static'
     #'/var/www/static/',
 ]
 
