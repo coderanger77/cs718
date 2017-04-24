@@ -5,7 +5,7 @@
     {% for bug in bugs %}
    <li>
     <ul>
-    <li>{{bug.bugId}}</li><br/>
+    <li><a href = "{%url 'update' bug.id %}">{{bug.id}}</a></li><br/>
     <li>{{bug.title}}</li><br/>
     <li>{{bug.description}}</li><br/>
   </ul>

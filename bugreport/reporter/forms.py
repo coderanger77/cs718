@@ -14,4 +14,4 @@ class BugUpdateForm(forms.ModelForm):
 
     class Meta:
         model=Bug
-        fields=['bugId','title','description'] #add any fields that needs to be updated.
+        fields=['title','description'] #add any fields that needs to be updated.

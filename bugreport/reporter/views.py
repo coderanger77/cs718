@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
-from django.shortcuts import render
-from django.http import HttpResponse
+from django.shortcuts import render,reverse
+from django.http import HttpResponse,HttpResponseRedirect
 from .forms import BugCreateForm,BugUpdateForm
 from .models import Bug
 
@@ -17,30 +17,34 @@ def createBug(request):
     if request.method == 'POST':
         form=BugCreateForm(request.POST)
         if form.is_valid():
-            form.save()
-            return render(request, 'index.html', {})
+            form_obj = form.save(commit=False)
+            print form_obj.title
+            print form_obj.description
+            form_obj.save()
+            return HttpResponseRedirect(reverse('viewbugs'))
     else:
         form=BugCreateForm()
         context={"form":form}
     return render(request, 'createBug.html', context)
 
-def updateBug(request):
+
+
+
+def updateBug(request,id):
+    print("updating bug")
     if request.method == 'POST':
-        form=BugUpdateForm(request.POST)
-        if form.is_valid():
-            print(form.bugId)
-            bug=Bug().objects.get(bugId=form.bugId)
-            bug.description=form.description
-            bug.title=form.title
-            bug.save()
-            #replace this with proper page
-            return render(request,'showBugs.html',context)
-        else:
-            return render(request,'createBug.html',context)
+        bug = Bug.objects.get(id=id)
+        form=BugUpdateForm(request.POST,instance=bug)
+        form_obj=form.save(commit=False)
+        form_obj.save()
+
+        return HttpResponseRedirect(reverse('viewbugs'))
+
     else:
-        form=BugUpdateForm()
+        bug = Bug.objects.get(id=id)
+        form=BugUpdateForm(instance = bug)
         context={"form":form}
-        return render(request,'createBug.html',context)
+        return render(request, 'updateBug.html', context)
 
 
 def viewBugs(request):

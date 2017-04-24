@@ -18,6 +18,6 @@ from .views import hello_view,createBug,updateBug,viewBugs
 urlpatterns = [
     url(r'^$', hello_view),
     url(r'^createBug$',createBug),
-    url(r'^updateBug$',updateBug),
-    url(r'^viewBugs$',viewBugs),
+    url(r'^updateBug/(?P<id>[0-9]+)/$',updateBug,name='update'),
+    url(r'^viewBugs$',viewBugs,name='viewbugs'),
 ]
