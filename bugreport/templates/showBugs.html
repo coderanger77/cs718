@@ -1,0 +1,17 @@
+<html>
+<body>
+  {% block content %}
+  <ul>
+    {% for bug in bugs %}
+   <li>
+    <ul>
+    <li><a href = "{%url 'update' bug.id %}">{{bug.id}}</a></li><br/>
+    <li>{{bug.title}}</li><br/>
+    <li>{{bug.description}}</li><br/>
+  </ul>
+</li>
+    {% endfor %}
+  </ul>
+  {% endblock %}
+</body>
+</html>
