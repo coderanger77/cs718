@@ -1,17 +1,32 @@
-<html>
-<body>
-  {% block content %}
-  <ul>
-    {% for bug in bugs %}
-   <li>
-    <ul>
-    <li><a href = "{%url 'update' bug.id %}">{{bug.id}}</a></li><br/>
-    <li>{{bug.title}}</li><br/>
-    <li>{{bug.description}}</li><br/>
-  </ul>
-</li>
-    {% endfor %}
-  </ul>
-  {% endblock %}
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1> {{Title}}</h1>
+  
+  <div class="row">
+  {% for bug in bugs %}
+
+  <div class="col-sm-6">
+    <div class="thumbnail">
+      <div class="caption">
+        <h3><a href = "{%url 'update' bug.id %}">{{bug.id}}</a></h3>
+        <p>{{bug.title}}</p>
+        <small>{{bug.createdDate}}</small>
+        <p>{{bug.description}}</p>
+        <p><a href="{%url 'update' bug.id %}" class="btn btn-primary" role="button">View</a> </p>
+      </div>
+    </div>
+  </div>
+
+
+{% cycle "" "</div><div class='row'>" %}
+
+{% endfor %}
+
+</div>
+
+{% endblock %}
+
+
+

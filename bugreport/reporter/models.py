@@ -15,7 +15,5 @@ class Bug(models.Model):
     createdDate = models.DateTimeField(default=timezone.now)
     publishedDate = models.DateTimeField(blank=True, null=True)
 
-
-
     def __str__(self):
         return self.title
