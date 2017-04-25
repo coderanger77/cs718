@@ -127,9 +127,6 @@ STATICFILES_DIRS = [
 
 STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static_cdn")
 
-<<<<<<< HEAD
 
-LOGIN_REDIRECT_URL = '/profiles/home'
-=======
+
 LOGIN_REDIRECT_URL = 'home'
->>>>>>> 6c4fe980a8183b9763eeae76a5761c5527fd1d4d

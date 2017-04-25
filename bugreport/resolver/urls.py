@@ -15,10 +15,11 @@ Including another URLconf
 """
 
 from django.conf.urls import url
-from .views import hello_view,solveBug,assignBug
+from .views import hello_view,solveBug,assignBug,deleteBug
 
 urlpatterns = [
     url(r'^$', hello_view, name = "resolver_hello_view"),
     url(r'^solveBug$',solveBug),
     url(r'^assignBug$',assignBug,name='assignBug'),
+    url(r'^deleteBug/(?P<id>[0-9]+)/$',deleteBug,name='deleteBug'),
 ]

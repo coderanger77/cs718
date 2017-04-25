@@ -60,4 +60,4 @@ def login_success(request):
     if request.user.groups.filter(name="reporter").exists():
         return HttpResponseRedirect(reverse('viewbugs'))
     else:
-        return HttpResponseRedirect(reverse('assignBug'))
+        return HttpResponseRedirect(reverse('resolver_hello_view'))
