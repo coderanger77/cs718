@@ -13,7 +13,7 @@
           <h3><a href = "{%url 'update' bug.id %}">{{bug.id}}</a></h3>
           <p>{{bug.title}}</p>
           <small>Created Date: {{bug.createdDate}}</small><br/>
-          <p>{{bug.description}}</p>
+          <p>{{bug.description | truncatechars:120}}</p>
           <p><a href="{%url 'update' bug.id %}" class="btn btn-primary" role="button">View</a> </p>
         </div>
       </div>
