@@ -14,9 +14,9 @@ def hello_view(request):
 
 def solveBug(request):
     # If this is a POST request then process the Form data
-    
-    return render(request, 'a.html', context)
+
+    return render(request, 'a.html', {})
 
 def assignBug(request):
-    
-    return render(request,'a.html',context)
+
+    return render(request,'a.html',{})

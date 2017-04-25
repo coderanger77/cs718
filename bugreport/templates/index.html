@@ -14,8 +14,14 @@
 
     <!-- Bootstrap Core CSS -->
     <link href="{% static "/css/bootstrap.min.css"%} " rel="stylesheet">
-
+    <script src="{% static "../js/bootstrap.min.js"%}" ></script>
+    <script src="{% static "../js/jquery.min.js"%}"></script>
     <!-- Custom CSS -->
+    <script type="text/javascript">
+   $(function(){
+      alert("My First Jquery Test");
+   });
+</script>
     <style>
     body {
         padding-top: 70px;
@@ -64,7 +70,7 @@
                      <span class="icon-bar"></span>
                      <span class="icon-bar"></span>
                  </button>
-                 <a class="navbar-brand" href="#">Start Bootstrap</a>
+                 <a class="navbar-brand" href="#">BugFixer</a>
              </div>
              <!-- Collect the nav links, forms, and other content for toggling -->
              <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" >
