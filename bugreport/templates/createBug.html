@@ -1,9 +1,13 @@
-<html>
-<body>
-  <h1> create bug</h1>
-  <form method="post"> {% csrf_token %}
+{% extends 'base.html' %}
+
+
+
+{% block content %}
+
+<h2>Create Bug</h2>
+ <form method="post"> {% csrf_token %}
   {{form.as_p}}
   <input type="submit"/>
 </form>
-</body>
-</html>
+
+{% endblock %}
