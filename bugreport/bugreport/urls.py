@@ -30,7 +30,7 @@ urlpatterns = [
     url(r'^reporter/', include('reporter.urls')),
     url(r'^resolver/', include('resolver.urls')),
     #url(r'^resolvers/', include('django.contrib.auth.urls')),
-    #(r'^profiles/home', home)
+    url(r'^home', home),   
 ]
 
 if settings.DEBUG:   

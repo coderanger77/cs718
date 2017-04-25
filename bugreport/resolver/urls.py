@@ -18,7 +18,7 @@ from django.conf.urls import url
 from .views import hello_view,solveBug,assignBug
 
 urlpatterns = [
-    url(r'^$', hello_view),
+    url(r'^$', hello_view, name = "resolver_hello_view"),
     url(r'^solveBug$',solveBug),
     url(r'^assignBug$',assignBug),
 ]
